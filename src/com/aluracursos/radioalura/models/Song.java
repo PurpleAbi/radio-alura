@@ -28,4 +28,14 @@ public class Song extends Audio{
     public void setAlbumName(String albumName) {
         this.albumName = albumName;
     }
+
+    @Override
+    public int getRanking(){
+        int totalRank = getTotalPlays()/getTotalLikes();
+        if (totalRank < 100){
+            return 5;
+        } else {
+            return 2;
+        }
+    }
 }

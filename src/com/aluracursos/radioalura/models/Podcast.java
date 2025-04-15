@@ -37,4 +37,14 @@ public class Podcast extends Audio{
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+    @Override
+    public int getRanking() {
+        int totalRank =getTotalPlays()/getTotalLikes();
+        if (totalRank < 400){
+            return 5;
+        } else {
+            return 2;
+        }
+    }
 }
